@@ -1,0 +1,13 @@
+#content > div {
+  width: 600px;
+  padding: 0 180px 0 30px;
+}
+h2 {
+  font-size: 15px;
+  font-weight: normal;
+  font-style: italic;
+  margin: 20px 0 10px -20px;
+}
+#content p {
+  margin: 10px 0;
+}

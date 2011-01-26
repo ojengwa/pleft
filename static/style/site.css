@@ -1,0 +1,196 @@
+@import url(goog-menus.css);
+@import url(goog-menubutton.css);
+@import url(goog-custom-button.css);
+
+body {
+  color: black;
+  margin: 0;
+  cursor: default;
+  font-size: 15px;
+}
+* {
+  font-family: 'Droid Sans', Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+a {
+  color: black;
+  text-decoration: underline;
+}
+a img {
+  border: 0;
+}
+
+#title {
+  padding: 5px 0;
+  background: #a4a4a4;
+}
+#title h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  margin: 0;
+  padding-left: 22px;
+}
+
+#content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#title h1, #content > div {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#footer {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#footer p {
+  padding: 0 10px;
+  display: inline;
+}
+#footer a, #footer span {
+  margin: 0 5px;
+}
+
+.appointment {
+  background: #fff;
+  width: 580px;
+  border: 1px solid;
+  border-top-width: 1px;
+  border-bottom-width: 3px;
+  font-size: 14px;
+}
+.appointment, .appointment input, .appointment textarea {
+  font-size: 13px;
+}
+.appointment h2 {
+  background: #fff;
+  position: relative;
+  bottom: 5px;
+  text-transform: uppercase;
+  padding: 10px 10px 0 10px;
+  font-weight: bold;
+  font-size: 12px;
+  display: none;
+}
+
+#ab-bar {
+  padding: 7px 0 4px 0;
+  border-bottom: 4px solid #eee;
+  font-size: 15px;
+  font-size: 13px;
+  background: #fff;
+}
+#ab-bar .goog-flat-menu-button {
+  cursor: pointer;
+  margin: -8px 0;
+  padding: 8px 8px 4px 8px;
+  border-bottom: 4px solid transparent;
+  color: #666;
+}
+#ab-bar .goog-flat-menu-button-open {
+  color: #000;
+}
+#ab-bar .goog-flat-menu-button-caption {
+  padding-right: 8px;
+}
+#ab-bar .goog-flat-menu-button-dropdown {
+  height: 15px;
+  width: 7px;
+  background: url(https://ssl.gstatic.com/editor/editortoolbar.png) no-repeat -388px 0;
+  vertical-align: top;
+}
+#ab-bar b {
+  font-weight: bold;
+}
+#ab-header {
+  color: #666;
+}
+#ab-header span {
+  padding: 8px 0 !important;
+}
+#ab-title {
+  font-weight: bold;
+  margin-left: 8px;
+}
+#ab-bar span, #ab-bar a {
+  padding: 4px 8px;
+}
+#ab-bar #ab-email {
+  font-weight: bold;
+}
+#ab-bar a {
+  text-decoration: none;
+  padding: 8px 8px 4px 8px;
+  color: #4e7bc6;
+  border-bottom: 4px solid transparent;
+}
+#ab-bar a:hover, #ab-bar .goog-flat-menu-button:hover,
+#ab-bar .goog-flat-menu-button-open {
+  border-bottom-color: #bcbdd3;
+  background: #eeeff7;
+}
+#ab-menu, #ab-settings, #ab-main {
+  padding-right: 20px !important;
+}
+#ab-menu::after, #ab-settings::after, #ab-main::after {
+  content: "▾";
+  position: absolute;
+  font-size: 20px;
+  margin-top: -5px;
+}
+#ab-email, #ab-signout {
+  float: right;
+  margin-top: -4px;
+}
+#ab-signout {
+  margin-top: -8px;
+}
+.goog-menu {
+  width: 200px;
+}
+.goog-menuitem {
+  padding-right: 4px;
+}
+.goog-menuitem-content {
+  overflow: hidden;
+}
+
+.side-help {
+  float: right;
+  width: 200px;
+}
+.side-help p {
+  margin: 1em 0 0 0;
+}
+.side-help p:first-child {
+  margin-top: 0;
+}
+
+#clockpuppets {
+  position: fixed;
+  bottom: -4px;
+  right: 8px;
+}
+
+#browser-notice {
+  background: yellow;
+  font-size: 18px;
+  padding: 10px;
+  text-align: center;
+}
+#browser-notice b {
+  font-weight: bold;
+}
+#browser-notice p {
+  margin: 5px;
+}
+#browser-notice .browsers a {
+  margin-right: 20px;
+  font-size: 26px;
+}

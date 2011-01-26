@@ -1,0 +1,71 @@
+{% load pleft_tags %}
+{% load i18n %}
+
+<!doctype html>
+<html lang={{ request.LANGUAGE_CODE }}>
+<meta charset=utf=8>
+
+<title>{% block pagetitle %}{{ settings.SITE_NAME }}{% endblock %}</title>
+
+<meta http-equiv=X-UA-Compatible content='IE=7,chrome=1'>
+<meta name=description content='{% blocktrans with settings.SITE_NAME as name %}Planning an appointment? {{ name }} helps you and the invitees to pick the right date and time.{% endblocktrans %}'>
+<meta property='og:title' content='{% blocktrans with settings.SITE_NAME as name %}{{ name }} the appointment planner{% endblocktrans %}'>
+<meta property='og:site_name' content='{{ settings.SITE_NAME }}'>
+<meta property='og:image' content='{{ settings.SCREENSHOT }}'>
+
+{% block meta %}{% endblock %}
+
+<link rel='image_src' href='/static/images/logo.png'>
+<link rel='shortcut icon' href='/favicon.ico'>
+
+<link rel=stylesheet href='/static/style/site.css'>
+<!--[if ie]><link rel=stylesheet href='/static/style/ie7.css'><![endif]-->
+{% block styles %}{% endblock %}
+
+<script>
+{% if user %}
+  signedIn = true;
+  email = '{{ user.email|escape }}';
+{% else %}
+  signedIn = false;
+{% endif %}
+  languages = {% templatetag openbrace %}{% for lang in LANGUAGES %}{{ lang.0 }}:'{{ lang.1 }}'{% if not forloop.last %},{% endif %}{% endfor %}{% templatetag closebrace %};
+  language = '{{ request.LANGUAGE_CODE }}';
+</script>
+
+<script src='{% url django.views.i18n.javascript_catalog %}?lang={{ request.LANGUAGE_CODE }}'></script>
+{% block scripts %}
+  {% insert_script 'main' %}
+{% endblock %}
+
+<body id='{% block pageid %}{% endblock %}'>
+
+<!--[if lt ie 7]>
+<div id=browser-notice>
+  <p><b>Internet Explorer 6 is not supported by {{ settings.SITE_NAME }}.</b>
+  <p>For the best experience and safer Web browsing, we recommend that you use one of these:
+  <p class=browsers>
+    <a href='http://www.google.com/chrome/' target=_blank>Google Chrome</a>
+    <a href='http://www.mozilla.com/' target=_blank>Mozilla Firefox</a>
+    <a href='http://www.microsoft.com/windows/internet-explorer/' target=_blank>Internet Explorer 8</a>
+    <a href='http://www.apple.com/safari/' target=_blank>Safari</a>
+</div> 
+<![endif]-->
+
+<div id=title>{% block title %}{% endblock %}</div>
+
+<div id=content>
+  <div>
+    {% block content %}{% endblock %}
+  </div>
+</div>
+
+<div id=clockpuppets><img src='/static/images/clockpuppets.png'></div>
+
+{% block main_script %}
+  <script>pleft.main.init()</script>
+{% endblock %}
+
+{% if not disable_analytics %}
+  {% google_analytics_snippet request %}
+{% endif %}

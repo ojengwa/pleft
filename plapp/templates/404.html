@@ -1,0 +1,17 @@
+{% extends 'plapp/base.html' %}
+
+{% load i18n %}
+
+{% block pagetitle %}{% trans "Not found" %} - {{ settings.SITE_NAME }}{% endblock %}
+
+{% block pageid %}not-signed-in{% endblock %}
+
+{% block title %}
+  <h1>{% trans "Not found" %}</h1>
+{% endblock %}
+
+{% block content %}
+<p>{% trans "We’re sorry, but this page does not seem to exist." %}
+<p>{% trans "Please check whether the address is correct." %}
+<p><a href='/'>{% trans "Back to the appointment form" %}</a>
+{% endblock %}
